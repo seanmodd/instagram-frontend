@@ -78,7 +78,7 @@ const post = {{
 }}
 
 export default () => {
-const url = post.url
+const url = post.image && post.image.url
 const description = post.description
 const likes = post.likes
 <div className='Post'>This is a Post
