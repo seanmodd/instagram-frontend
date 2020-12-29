@@ -27,7 +27,6 @@ export default () => {
     formData.append('files.image', file);
 
     try {
-      throw 'error';
       const response = await fetch('http://localhost:1337/posts', {
         method: 'POST',
         body: formData,
