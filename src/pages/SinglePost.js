@@ -7,6 +7,9 @@ export default ({ match, history }) => {
 
   const [post, setPost] = useState({});
   const [loading, setLoading] = useState(true);
+  const [edit, setEdit] = useState(false);
+  //Used for the edit form
+  const [description, setDescription] = useState('');
 
   const handleDelete = async () => {
     const response = await fetch(`http://localhost:1337/posts/${id}`, {
@@ -16,12 +19,27 @@ export default ({ match, history }) => {
     history.push('/');
   };
 
+  const handleEditSubmit = async (event) => {
+    event.preventDefault();
+    console.log('handleEditSubmit');
+    const response = await fetch(`http://localhost:1337/posts/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        description,
+      }),
+    });
+    const data = await response.json();
+    console.log('handleEditSubmit data', data);
+  };
+
   useEffect(() => {
     const fetchPost = async () => {
       const response = await fetch(`http://localhost:1337/posts/${id}`);
       const data = await response.json();
       console.log('data', data);
       setPost(data);
+      setDescription(data.description);
       setLoading(false);
     };
     fetchPost();
@@ -39,6 +57,17 @@ export default ({ match, history }) => {
                 likes={post.likes}
               />
               <button onClick={handleDelete}>Delete this Post</button>
+              <button onClick={() => setEdit(true)}>Edit this Post</button>
+              {edit && (
+                <form onSubmit={handleEditSubmit}>
+                  <input
+                    value={description}
+                    onChange={(event) => setDescription(event.target.value)}
+                    placeholder='New description'
+                  />
+                  <button>Confirm</button>
+                </form>
+              )}
             </>
           )}
           {!post.id && <p>404 - not found</p>}
