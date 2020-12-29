@@ -11,6 +11,15 @@ export default ({ match, history }) => {
   //Used for the edit form
   const [description, setDescription] = useState('');
 
+  const fetchPost = async () => {
+    const response = await fetch(`http://localhost:1337/posts/${id}`);
+    const data = await response.json();
+    console.log('data', data);
+    setPost(data);
+    setDescription(data.description);
+    setLoading(false);
+  };
+
   const handleDelete = async () => {
     const response = await fetch(`http://localhost:1337/posts/${id}`, {
       method: 'DELETE',
@@ -30,18 +39,11 @@ export default ({ match, history }) => {
       }),
     });
     const data = await response.json();
+    fetchPost();
     console.log('handleEditSubmit data', data);
   };
 
   useEffect(() => {
-    const fetchPost = async () => {
-      const response = await fetch(`http://localhost:1337/posts/${id}`);
-      const data = await response.json();
-      console.log('data', data);
-      setPost(data);
-      setDescription(data.description);
-      setLoading(false);
-    };
     fetchPost();
   }, []);
   return (
