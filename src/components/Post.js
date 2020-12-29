@@ -77,6 +77,10 @@ const post = {{
     ]
 }}
 
-export default () => <div className='Post'>This is a Post
+export default () => {
+const url = post.url
+const description = post.description
+const likes = post.likes
+<div className='Post'>This is a Post
 
 </div>;
