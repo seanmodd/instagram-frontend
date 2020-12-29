@@ -76,17 +76,19 @@ const post = {
     },
   ],
 };
+const API_URL = 'http://localhost:1337';
+const formatImageUrl = (url) => `${API_URL}${url}`;
 
 export default () => {
-  const url = post.created_at;
+  const url = post.image[0] && post.image[0].url;
   console.log('url', url);
+
   const description = post.description;
   console.log('description', description);
   const likes = post.likes;
   console.log('likes', likes);
   return (
     <div className='Post'>
-      This is a Post <br />
       <h4>{description}</h4>
       <div>
         <span>Likes: {likes}</span>
