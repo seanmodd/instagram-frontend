@@ -30,3 +30,18 @@ a.active {
   width: auto;
   margin: 10%;
 }
+
+.Nav {
+  vertical-align: middle;
+  background-color: aqua;
+  overflow-wrap: break-word;
+  width: 290px;
+  height: auto;
+}
+
+.NavLink {
+  width: auto;
+  height: auto;
+  margin: 210px 10px 100px 10px;
+  overflow-wrap: break-word;
+}

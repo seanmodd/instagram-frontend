@@ -5,21 +5,21 @@ export default () => {
   const { user } = useContext(UserContext);
   return (
     <div className='Nav'>
-      <NavLink to='/' exact>
+      <NavLink className='NavLink' to='/' exact>
         Home
       </NavLink>
       {user && (
-        <NavLink to='/create' exact>
+        <NavLink className='NavLink' to='/create' exact>
           Create
         </NavLink>
       )}
       {!user && (
         <>
-          <NavLink to='/login' exact>
+          <NavLink className='NavLink' to='/login' exact>
             Login
           </NavLink>
-          <br />
-          <NavLink to='/signup' exact>
+
+          <NavLink className='NavLink' to='/signup' exact>
             Signup
           </NavLink>
         </>
