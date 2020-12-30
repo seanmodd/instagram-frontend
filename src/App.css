@@ -3,6 +3,8 @@ body {
   width: 290px;
   margin: auto;
   background-color: silver-transparency;
+  color: blue;
+  font-family: sans-serif;
 }
 
 .Post {
@@ -36,7 +38,7 @@ a.active {
 
 .Nav {
   vertical-align: middle;
-  background-color: papayawhip;
+  background-color: rgb(54, 64, 73);
   overflow-wrap: break-word;
   width: 290px;
   height: auto;
@@ -48,4 +50,5 @@ a.active {
   height: auto;
   margin: 210px 10px 100px 10px;
   overflow-wrap: break-word;
+  color: whitesmoke;
 }
