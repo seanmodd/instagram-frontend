@@ -8,7 +8,7 @@ body {
   margin: 12px auto;
   padding: 12px 20px;
   border: 1px solid #eee;
-  border-radius: 4px;
+  border-radius: 10px;
   align-content: center;
   text-align: center;
 }
@@ -33,10 +33,11 @@ a.active {
 
 .Nav {
   vertical-align: middle;
-  background-color: aqua;
+  background-color: papayawhip;
   overflow-wrap: break-word;
   width: 290px;
   height: auto;
+  border-radius: 100px;
 }
 
 .NavLink {
