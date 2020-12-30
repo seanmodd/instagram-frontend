@@ -2,6 +2,7 @@ body {
   text-align: center;
   width: 290px;
   margin: auto;
+  background-color: silver-transparency;
 }
 
 .Post {
@@ -11,10 +12,12 @@ body {
   border-radius: 10px;
   align-content: center;
   text-align: center;
+  background-color: silver;
 }
 
 .Post__Image {
   max-width: 250px;
+  border-radius: 10px;
 }
 
 a {
