@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { UserConext } from '../context/UserContext';
+import { UserContext } from '../context/UserContext';
 
-export default () => {
+export default ({ history }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -29,8 +29,10 @@ export default () => {
           password,
         }),
       });
+
       const data = await response.json();
       console.log('data', data);
+
       if (data.message) {
         setError(data.message[0].messages[0].message);
 

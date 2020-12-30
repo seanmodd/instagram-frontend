@@ -11,7 +11,7 @@ import './App.css';
 function App() {
   return (
     <div className='App'>
-      <h2>App</h2>
+      <h2 className='apptitle'>App</h2>
 
       <BrowserRouter>
         <Nav />
