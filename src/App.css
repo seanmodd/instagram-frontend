@@ -32,16 +32,19 @@ a.active {
 
 .apptitle {
   text-align: center;
+  justify-items: auto;
   width: auto;
-  margin: 10%;
+  margin: 20% 0 10% 0;
+  box-sizing: border-box;
+  line-height: 34px;
 }
 
 .Nav {
-  vertical-align: middle;
+  height: auto;
+  width: 290px;
+  line-height: 50px;
   background-color: rgb(54, 64, 73);
   overflow-wrap: break-word;
-  width: 290px;
-  height: auto;
   border-radius: 100px;
 }
 

@@ -13,7 +13,10 @@ import './App.css';
 function App() {
   return (
     <div className='App'>
-      <h2 className='apptitle'>App</h2>
+      <h2 className='apptitle'>
+        RESTful API <br />
+        integrated with<br /> CRUD Web App
+      </h2>
 
       <BrowserRouter>
         <Nav />
