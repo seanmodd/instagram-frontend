@@ -4,10 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import UserContextProvider from './context/UserContext';
+import LikesContextProvider from './context/LikesContext';
 
 ReactDOM.render(
   <UserContextProvider>
-    <App />
+    <LikesContextProvider>
+      <App />
+    </LikesContextProvider>
   </UserContextProvider>,
 
   document.getElementById('root')
